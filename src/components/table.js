@@ -1,7 +1,6 @@
-import React from 'react';
+import React from "react";
 
 export const Table = (props) => {
-    const[movies]=props
   return (
     <table>
       <thead>
@@ -16,8 +15,7 @@ export const Table = (props) => {
         </tr>
       </thead>
       <tbody>
-        {movies.map((mov)=>
-        {
+        {props.movies.map((mov) => {
           <tr>
             <td>{mov.id}</td>
             <td>{mov.title}</td>
@@ -31,10 +29,8 @@ export const Table = (props) => {
               <button>حذف</button>
             </td>
           </tr>;
-        }
-        )
-        }
+        })}
       </tbody>
     </table>
   );
-}
+};
