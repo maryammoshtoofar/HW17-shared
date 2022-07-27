@@ -27,7 +27,7 @@ export const Table = (props) => {
               <button>توضیحات</button>
             </td>
             <td>
-              <button>حذف</button>
+              <button onClick={(e)=>props.deleteMovie(e,mov.id)}>حذف</button>
             </td>
           </tr>
         ))}

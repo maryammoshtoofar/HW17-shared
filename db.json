@@ -1,10 +1,9 @@
 {
-  "movies": [
-    { "id": 1, "title": "movie1", "director": "hollywood" ,"genre":"horror", "year":1998 , "explanation":"lkjlfvjnkjvnkjnsdkj"},
-    { "id": 2, "title": "movie2", "director": "Mike" ,"genre":"comedy", "year":2009 , "explanation":"jbsdhgSVHCKsj"},
-    { "id": 3, "title": "movie3", "director": "jack" ,"genre":"romance", "year":2021 , "explanation":"jNASDIUhwqd"},
-    { "id": 4, "title": "movie4", "director": "lili" ,"genre":"drama", "year":2004 , "explanation":"kshvgFA"},
-    { "id": 4, "title": "movie5", "director": "steve" ,"genre":"fancy", "year":2005 , "explanation":";LEKFOWEJFI JWEIU"}
-  ]
-
+"movies": [
+{ "id": 1, "title": "movie1", "director": "hollywood" ,"genre":"horror", "year":1998 , "explanation":"lkjlfvjnkjvnkjnsdkj"},
+{ "id": 2, "title": "movie2", "director": "Mike" ,"genre":"comedy", "year":2009 , "explanation":"jbsdhgSVHCKsj"},
+{ "id": 3, "title": "movie3", "director": "jack" ,"genre":"romance", "year":2021 , "explanation":"jNASDIUhwqd"},
+{ "id": 4, "title": "movie4", "director": "lili" ,"genre":"drama", "year":2004 , "explanation":"kshvgFA"},
+{ "id": 5, "title": "movie5", "director": "steve" ,"genre":"fancy", "year":2005 , "explanation":";LEKFOWEJFI JWEIU"}
+]
 }

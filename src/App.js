@@ -12,13 +12,22 @@ function App() {
       });
     });
   };
+  const deleteMovie=(e,id)=>{
+    e.preventDefault();
+    fetch(`http://localhost:3001/movies/${id}`,{method:"DELETE"}).then(()=>{
+      const filteredMovies=movies.filter((mov)=>mov.id!==id)
+      setMovies(filteredMovies);
+    }
+
+    )
+  }
   useEffect(() => {
     getData();
   }, []);
   return (
     <>
       <Form />
-      <Table movies={movies} />
+      <Table movies={movies} deleteMovie={deleteMovie} />
     </>
   );
 }
