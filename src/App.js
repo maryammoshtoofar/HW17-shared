@@ -5,6 +5,7 @@ import "./App.css";
 
 function App() {
   const [movies, setMovies] = useState([]);
+  const [showModal, setshowModal] = useState(false);
   const getData = () => {
     fetch(`http://localhost:3001/movies`).then((data) => {
       data.json().then((res) => {
@@ -21,13 +22,25 @@ function App() {
 
     )
   }
+  const openModal=()=>{
+    setshowModal(true);
+  }
+  const closeModal = () => {
+    setshowModal(false);
+  };
   useEffect(() => {
     getData();
   }, []);
   return (
     <>
       <Form />
-      <Table movies={movies} deleteMovie={deleteMovie} />
+      <Table
+        movies={movies}
+        deleteMovie={deleteMovie}
+        openModal={openModal}
+        closeModal={closeModal}
+        showModal={showModal}
+      />
     </>
   );
 }
