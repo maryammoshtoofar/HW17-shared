@@ -5,7 +5,7 @@ import "./App.css";
 
 function App() {
   const [movies, setMovies] = useState([]);
-  const [showModal, setshowModal] = useState(false);
+
   const getData = () => {
     fetch(`http://localhost:3001/movies`).then((data) => {
       data.json().then((res) => {
@@ -13,21 +13,19 @@ function App() {
       });
     });
   };
-  const deleteMovie=(e,id)=>{
+  const deleteMovie = (e, id) => {
     e.preventDefault();
-    fetch(`http://localhost:3001/movies/${id}`,{method:"DELETE"}).then(()=>{
-      const filteredMovies=movies.filter((mov)=>mov.id!==id)
-      setMovies(filteredMovies);
-    }
-
-    )
-  }
-  const openModal=()=>{
-    setshowModal(true);
-  }
-  const closeModal = () => {
-    setshowModal(false);
+    fetch(`http://localhost:3001/movies/${id}`, { method: "DELETE" }).then(
+      () => {
+        const filteredMovies = movies.filter((mov) => mov.id !== id);
+        setMovies(filteredMovies);
+      }
+    );
   };
+  //   const openModal=()=>{
+  //     setshowModal(true);
+  //   }
+
   useEffect(() => {
     getData();
   }, []);
@@ -37,9 +35,9 @@ function App() {
       <Table
         movies={movies}
         deleteMovie={deleteMovie}
-        openModal={openModal}
-        closeModal={closeModal}
-        showModal={showModal}
+        // openModal={openModal}
+        // closeModal={closeModal}
+        // showModal={showModal}
       />
     </>
   );
