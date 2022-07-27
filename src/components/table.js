@@ -1,7 +1,7 @@
 import React from "react";
 
 export const Table = (props) => {
-    console.log(props.movies);
+  console.log(props.movies);
   return (
     <table>
       <thead>
@@ -16,7 +16,7 @@ export const Table = (props) => {
         </tr>
       </thead>
       <tbody>
-        {props.movies.map((mov) => {
+        {props.movies.map((mov) => (
           <tr key={mov.id}>
             <td>{mov.id}</td>
             <td>{mov.title}</td>
@@ -29,8 +29,8 @@ export const Table = (props) => {
             <td>
               <button>حذف</button>
             </td>
-          </tr>;
-        })}
+          </tr>
+        ))}
       </tbody>
     </table>
   );
