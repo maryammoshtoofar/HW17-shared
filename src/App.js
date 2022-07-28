@@ -22,13 +22,26 @@ function App() {
       }
     );
   };
+  const addMovie = (newMovie) => {
+    let updatedMovies=[];
+    fetch(`http://localhost:3001/movies`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newMovie),
+    }).then((response)=>response.json())
+    .then((data)=>{
+      // console.log(data)
+      updatedMovies=[...movies,data];
+      setMovies(updatedMovies);
+    })
+  };
 
   useEffect(() => {
     getData();
   }, []);
   return (
     <>
-      <Form />
+      <Form addMovie={addMovie} />
       <Table movies={movies} deleteMovie={deleteMovie} />
     </>
   );
