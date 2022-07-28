@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import { Modal } from "./modal";
 
-function TableRow({ id, title, director, genre, year, explanation }) {
+function TableRow({
+  id,
+  title,
+  director,
+  genre,
+  year,
+  explanation,
+  deleteMovie,
+}) {
   const [showModal, setshowModal] = useState(false);
-  const closeModal = () => {
-    setshowModal(false);
-  };
   return (
     <tr key={id}>
       <td>{id}</td>
@@ -15,13 +20,18 @@ function TableRow({ id, title, director, genre, year, explanation }) {
       <td>{year}</td>
       <td>
         <button onClick={() => setshowModal(true)}>توضیحات</button>
-        {showModal && <Modal explanation={explanation} onClose={closeModal} />}
+        {showModal && (
+          <Modal
+            explanation={explanation}
+            closeModal={() => setshowModal(false)}
+          />
+        )}
       </td>
       <td>
-        <button>حذف</button>
+        <button onClick={(e) => deleteMovie(e, id)}>حذف</button>
       </td>
     </tr>
   );
 }
-// onClick={(e) => deleteMovie(e, mov.id)}
+//
 export default TableRow;

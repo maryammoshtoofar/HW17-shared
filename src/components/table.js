@@ -2,7 +2,7 @@ import React from "react";
 import TableRow from "./tableRow";
 
 export const Table = (props) => {
-  const { movies, deleteMovie} = props;
+  const { movies, deleteMovie } = props;
   return (
     <>
       <table>
@@ -19,7 +19,7 @@ export const Table = (props) => {
         </thead>
         <tbody>
           {movies.map((mov) => {
-            return <TableRow key={mov.id} {...mov} />;
+            return <TableRow key={mov.id} {...mov} deleteMovie={deleteMovie} />;
           })}
         </tbody>
       </table>

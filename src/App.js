@@ -22,9 +22,6 @@ function App() {
       }
     );
   };
-  //   const openModal=()=>{
-  //     setshowModal(true);
-  //   }
 
   useEffect(() => {
     getData();
@@ -32,13 +29,7 @@ function App() {
   return (
     <>
       <Form />
-      <Table
-        movies={movies}
-        deleteMovie={deleteMovie}
-        // openModal={openModal}
-        // closeModal={closeModal}
-        // showModal={showModal}
-      />
+      <Table movies={movies} deleteMovie={deleteMovie} />
     </>
   );
 }
